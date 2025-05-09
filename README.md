@@ -1,4 +1,4 @@
-# 📘 Next.js + NestJS Starter Project
+# 📘 Next.js Starter Project
 
 This is my Next.js project, created as a **reference codebase** for future projects.  
 It includes all the essential boilerplate for using **Next.js as a frontend** and **NestJS as a backend**.
@@ -35,8 +35,9 @@ You’ll see your project up and running!
 
 
 ## 📂 Project Purpose
-This project is meant to be a starter boilerplate.
-You can copy this structure to kickstart your own applications quickly and efficiently.
+
+This project serves as a **starter boilerplate** for building modern web applications.  
+You can use its structure and code examples as a solid reference to **kickstart your own projects quickly and efficiently**.
 
 ## 📚 Learn More
 To dive deeper into Next.js, check out the following resources:
