@@ -12,6 +12,8 @@ It includes all the essential boilerplate for using **Next.js as a frontend** an
 ```bash
 git clone https://github.com/kerkeniaziz/blog.git
 cd blog
+
+npm install
 ```
 ### 2. Run the Development Server
 Use your preferred package manager:
