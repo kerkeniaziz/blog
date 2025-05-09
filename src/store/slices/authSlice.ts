@@ -1,21 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-const initialState = {
-    value: 0,
+interface AuthState {
+    isLoggedIn: boolean;
+    token: string | null;
+    refreshToken: string | null;
+}
+
+const initialState: AuthState = {
+    isLoggedIn: false,
+    token: null,
+    refreshToken: null,
 };
 
-const counterSlice = createSlice({
-    name: 'counter',
+const authSlice = createSlice({
+    name: "auth",
     initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
+        setIsLoggedIn: (state, action: PayloadAction<boolean>) => {
+            state.isLoggedIn = action.payload;
         },
-        decrement: (state) => {
-            state.value -= 1;
+        setToken: (state, action: PayloadAction<string | null>) => {
+            state.token = action.payload;
+        },
+        setRefreshToken: (state, action: PayloadAction<string | null>) => {
+            state.refreshToken = action.payload;
+        },
+
+        logout: (state) => {
+            state.isLoggedIn = false;
+            state.token = null;
         },
     },
 });
 
-export const { increment, decrement } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { setIsLoggedIn, setToken, setRefreshToken, logout } = authSlice.actions;
+export default authSlice.reducer;

@@ -1,22 +1,20 @@
 // components/ClientLayout.tsx
-"use client";
+'use client';
 
-import { useAuth } from "@/context/AuthContext";
-import NavBarHome from "./navBarHome";
-import NavBarUser from "./navBarUser";
-import FooterSection from "./footer";
-
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store';
+import NavBarHome from './navBarHome';
+import NavBarUser from './navBarUser';
+import FooterSection from './footer';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
-  const { isLoggedIn } = useAuth();
+  const isLoggedIn = useSelector((state: RootState) => state.auth.isLoggedIn);
 
   return (
-    <>
-      {isLoggedIn ? <NavBarUser /> : <NavBarHome />}
-      {children}
-      
-      {isLoggedIn ? "" : <FooterSection />}
-
-    </>
+      <>
+        {isLoggedIn ? <NavBarUser /> : <NavBarHome />}
+        {children}
+        {!isLoggedIn && <FooterSection />}
+      </>
   );
 }
